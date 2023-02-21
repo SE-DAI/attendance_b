@@ -15,7 +15,7 @@ gem 'jquery-rails'
 gem 'turbolinks',   '~> 5'
 gem 'jbuilder',     '~> 2.5'
 gem 'bootstrap-sass'
-gem 'solargraph'
+gem "solargraph", group: :development
 gem 'bcrypt'
 
 group :development, :test do

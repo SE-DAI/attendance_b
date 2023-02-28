@@ -4,6 +4,8 @@
   <h1>勤怠システム</h1>  
   <%= link_to "ログイン", login_path, class: "btn btn-lg btn-primary" %>
   <p>アカウント作成は<%= link_to "こちら", signup_path %>から</p>
-  <%= link_to "(仮)ログアウト", logout_path, class: "btn btn-lg btn-warning", method: :delete %>
-  <%= link_to "個人情報更新", edit_user_path(current_user), class: "btn btn-lg btn-info" %>
+  <% if logged_in? %>
+    <%= link_to "(仮)ログアウト", logout_path, class: "btn btn-lg btn-warning", method: :delete %>
+    <%= link_to "個人情報更新", edit_user_path(current_user), class: "btn btn-lg btn-info" %>
+  <% end %>
 </div>

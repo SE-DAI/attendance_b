@@ -10,7 +10,16 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if logged_in?
+      unless current_user.admin?
+        flash[:warning] = "すでにアカウントは作成済みです。"
+        redirect_to current_user
+      else
+        @user = User.new
+      end
+    else
+      @user = User.new
+    end
   end
 
   def create

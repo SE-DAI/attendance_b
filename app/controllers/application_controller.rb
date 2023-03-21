@@ -33,6 +33,13 @@ end
     end
   end
 
+  def admin_or_correct_user
+    @user = User.find(params[:user_id]) if @user.blank?
+    unless current_user?(@user) || current_user.admin?
+      flash[:warning] = "権限がありません。"
+      redirect_to(root_url)
+    end  
+  end
 
   # ページ出力前に1ヶ月分のデータの存在を確認・セットします。
   def set_one_month 

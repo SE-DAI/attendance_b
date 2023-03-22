@@ -69,6 +69,17 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def search
+    if params[:keyword].present?
+      @users = User.paginate(page: params[:page]).search(params[:keyword])
+      @keyword = params[:keyword]
+      render :search
+    else
+      flash[:info]= "検索候補を入力してください。"
+      redirect_to users_url
+    end
+  end
+
   private
 
   def user_params

@@ -1,13 +1,15 @@
 <% provide(:title, "検索結果") %>
 <h1>検索結果</h1>
 
-<div class="search-form">
-  <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <%= f.text_field :keyword, value: @keyword %>
-    <%= f.submit "検索", class: "bg-primary" %>
-  <% end %>
+<div class="container text-right">
+  <div class="search-form">
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <%= f.text_field :keyword, value: @keyword %>
+      <%= f.submit "検索", class: "bg-primary" %>
+    <% end %>
+  </div>
 </div>
 
-<div class="col-md-10 colmd-offset-1">
+<div class="col-md-10 col-md-offset-1">
   <%= render "users_index" %>
 </div>

@@ -157,6 +157,7 @@ GEM
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
+    rounding (1.0.1)
     rubocop (1.45.1)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -254,6 +255,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.6)
   rails-i18n
+  rounding
   sass-rails (~> 5.0)
   solargraph
   spring
